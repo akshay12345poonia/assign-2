@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Store</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.cart, .account {
+    margin-left: auto;
+}
+
+main {
+    padding: 20px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 22%;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.product-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.discount {
+    color: #ff6700;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.price {
+    font-size: 18px;
+    color: #000;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.banner {
+    background-color: #f8e5d0;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.banner h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+
+.banner p {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+}
+
+.cta-button {
+    background-color: #ff6700;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Phone</a></li>
+                <li><a href="#">TV & Smart Home</a></li>
+                <li><a href="#">Tablet</a></li>
+                <li><a href="#">Lifestyle</a></li>
+                <li><a href="#">Discover</a></li>
+                <li><a href="#">Support</a></li>
+                <li class="cart"><a href="#">Cart</a></li>
+                <li class="account"><a href="#">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-grid">
+            <div class="product-card">
+                <img src="https://www.fixshop.eu/media/product_image/1100292790.jpg" alt="Redmi Earphones">
+                <h3>Redmi Earphones</h3>
+                <span class="discount">25% off</span>
+                <p class="price">₹449 <span class="original-price">₹599</span></p>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/31jpgToigML._SX300_SY300_QL70_FMwebp_.jpg" alt="Mi Dual Driver Earphones">
+                <h3>Mi Dual Driver Earphones</h3>
+                <span class="discount">20% off</span>
+                <p class="price">₹799 <span class="original-price">₹999</span></p>
+            </div>
+            <div class="product-card">
+                <img src="data:image/png;base64,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" alt="Redmi Sonic Bass Earphones">
+                <h3>Redmi Sonic Bass Wireless Earphones 2</h3>
+                <span class="discount">56% off</span>
+                <p class="price">₹1,299 <span class="original-price">₹2,999</span></p>
+            </div>
+            <div class="product-card">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIALcAwwMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAAAwECBAYHBQj/xABBEAABAgMFBQQIBAUEAgMAAAABAAIDBBEFEiExQVFhcYHwBpGhwQcTIjJCUrHRFGLh8SMzcoKyY5KiwpPSFRZT/8QAGgEBAQEBAQEBAAAAAAAAAAAAAAECAwUEBv/EACARAQACAgICAwEAAAAAAAAAAAABAhExAyEEEjJBcQX/2gAMAwEAAhEDEQA/AO4oiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIqOIAq6gG9YUe1bPlv58/LQ9zorQgzkXgTPbLs9L+/asAnYwF9e4LzI/pJ7Owvcjxop/LCoDzdQINyRc4mvSzZzATAs6ZigZ3nhuHKqwonpYvtJhQIEu7GrYzXEjGn5dnVEHVEXFpj0pWs4kQnQ2bocsSO81HisOa9IlszBaxkeYbUjFl1uu5XA7qoo0eFBFY0VkMbXuAqvneP2itSYBfMWlNRGHQxnEAGhOBwyd/xWHFjxIge5zrznVrTU58feYe9MD6BjdprEg/zLVk8NGxQ45VyG7FYMft12dhEtdPEn8sF+0DZvC4dEmokV0Mxnve1p9i9EJLRep/2B5KH1j7ueTaUriPZb5tTA7afSJYdQGCZfiBhDGpI1O0FRO9JdiCGXiDOEAE+435b3zbFx1sWkQV1eKf+R3/ALBWNe71FBqzDiYdPIq4HdJXtvYEw+46b/DkEj+OwsGBpnlmvSdb1liLBhtm2vdGBLPVguw24DAb18/RHlznDD3nZ7nNP0opJebjyrnGXimHU+0GupUmIcxrh9VMD6OzFQAQdQFRcVlO23aBkuxom6huA/hty00VUwO2orYjgxpc40AFSScAtStj0gWHZzD6mI+bIydCwZXH4jnlpUqDb1iT0/KSLA+cmYUBpyMR4bWmzauayvpPfMTEN82yDAkzGbDiMBcH3XDNrqgnuHmvG9I1nyUW1/X2VaMRzIrCYzGRiQxw3jE12VOWiDe7U9I1jSTXfh4c7OEV/kwKDvdTwqtTnPS9NvJEhZcGGNHRnmIe4Ux3LRnTMKzpf1DYkSYitJAq+87PLd+q8euJOJLiXEjUnE0517wg3aZ9JfaaOT6uchQWnIQYLfCtSe/ZtXlR+11vzH862J7eIcZze6lK/ttWvh2/u16+yuvbuQ068kGZMTsxMn+PHjRSK4veXU01y/baoXxHDA1BGureHd9NqiDtjqb9nXklRUZ10I8O7DuQZESO+J7UZxJxqSanfjrr3NVL7sa1pjeH18/BY96lMBpdH08kDyKUxyp5eSonvuqb2J+I/N1iP7lWtcRiRr1v/wAlCHUoRpT9PoErQXm59U/6oJg8j3aVGVd2XiAearVuQAptGmgP+KgJri3Lqn/VUFOB064UQZF5rsK4ajcf0d4ICWm+czRx45n6FRVBwdg467tR3FXOcbpDxeOdfH7oL72FG+80UHIUH0CesFaka1pur9nFRCoF0e0BluH2wCcDVmu3qhVEocSKXqGlOdKfVoUgeAa3aNrXjjl3OIWKCQasIyyOZP7hVD2hxIq0EDA7P2KDLhup7OPynmLv2UjopIqbt8512kVx5tWEXBwxa6u0dbVIyM+6Lprz5/dBkiZiQ/Zh0u5im/FFj/iYTcHw7x23tNEQbH299IU3aloxoFnzb4FmQ3FjRDdT11D75OoOg2BeDZ862bc0RnNLqey4DNapNPvGla0V8jHfLu9YK3B71NNhWRusb1MvBfFcB7Oh8F401aUxMGjasbo1vW3BZEaY/F2W4ijnUBB+amK8ckCrSS6ue3L7Yc0F7Thj3qoO3Dh11RRkmtMAQcq0OfX+1U2U8cKDfs070E1eW/YgduA3HJWA4a7scaabj+qpepjUcamnHcglvbGl3HOn7Ktd4eN+e9R3gcTQbK5cj39yo4nCv/IeaCUP/P8A2uyQm7+WuhGCjDjpe/yal75a77pvBUTe6L1Lu9pwQO+Kh/qbpxUAcK4UvflN0+KqXDX3vzeyfDDrkgnvVxwdXVhxVb29p3OFPFY9/wCYV2Vb5hVvOJpU03gOA+yDJv01Iro8EjvVLxb+UHO6QQeXX3sk4MeZJEtBjxXfE2CwuPdTjp9l7Er2Q7RTAvMsmYZjgYtIPM3yNnWazN613LUUtOoeS2JnQ47W5Dly60V+KlQfiaaGmeXA9YV9+0uxVrWZZce0JyJJ3IDQTCZHrEpUCtQ27licdFrHrMRXH5a48gRvw5jPW1vW2i1LV2nJrmb1PmwJ661Kes3kbnDz6+0BfhiKimZxGW3T7juqYhGlNtHVaPtjXv0phplLf4t4GoPXW66/wdwwKxg8VwLRzLT1pxRzh8Tq73jDv4Y96DJv/wCjMO3hx+yLF9bdwDqbugiDzCHxozYcMExIjrrQNSTT6ldi7LSMGzQ2RY1twCjsK3zShJ4rl/Z+F6ztLIM/1mvHEe15Lq0A3LQhRB8RosNVeP227LwrAnGTVmsuSE3gYLRhAiUrQflOJA0xGVFokyy5HIBAFfZLjSmP7nku8drIEOasObhRdYAuf1VBb4gLhlojFp2dfXBa+kttiVAGZpTHC9p9afVC51cDQ/MDUNPHTH6Kwuq6tNmNK86jfjwCtvCmrhTbpTLjT/JREt6tCRwwyP02ZbFT1hNBXKlK1w89me9RXs9TpTrj4Khdjz+HPXLXb4IJw7DM8SaE88v3VL27llXy/dQ3qYnIZ3c+s/BL2uAG44DyP6IJXPpiSBT4qU8VW8T7WLj81K48etFDep8NKa5U59ZJXfWnxZ+I4eColEQmtDgNAa05Kt8aeB8lDery53et2xVDr2uWla03UPWCCW9U+9TdlXv6xV1RhkTtLc+7rFQB1NaV0DqcuuKrodK8q6efig6J2d7TTTbElIRjG8yGGmrlmOtuO8+94rSbDiVlKVrceRnXWvmtghvvjgvD5qYvL9l4XpbhrOI0yZ6cjTUrMwi/34TwMNoK0APOQJNAMMjTfptHHmFvTP5jBtNFoRZdL2fJhlTd3YZ88wV9ng9RLy/7de6T+wvD3A40ruwP6mvnqqXhhjTZeFO4/bSh2KwON0Ur5d2nVNCqAjTH+nEfr0NV6DwUt75i47Kivj9t1NFUOBwbex+U18O7nlooi7nwOPXWxK9OwPf1t2KidpeBRrX03S7neIPhpkqKOrPivV/pcfoiD1OxLWf/AHmxhFpcMy1prliC36kLr3aKx4lnRTGYP4NagtyBzXEJWKJS1JOaxuwYzYmH5XA+S+gmzEaHLPMZ1JQggtim9eG4beYXOZlusZeP2tnIkT8NJSv8SJEa15DdcKDzXKu0cB0pNxIMQC/DeWm73jwK6nZcSTnoMea/BPmXQ3GHGYIrmvY1uAOGbaAa/c6B6RPwr7TvyMu2XguhsPq26HEH6K5Ldw00mu3M5DPfh3cArS7Wp21rz/XuVj3Y5clZepr114KsJS6mlN4068lS/vA3aDy/ZRk9FUJ6KCW9THKm3T9qeCqHHMVA+lN/WSgBVwdy68OKCYEDEUFOs+X1VCdcuO7rNR15ePXlzVWnHDw6w62oJANdnDrTL7qpOmOGypPjnkowd1eA664Kpyzrz664IJRplnoeuqFK1bTaNcPDy4hRg0J6660KqD1TrreENPRsqdgSjY3rr5LiLt1uJwAzWY/tHpBlXGg96I/7LwyePIddcVaTxXK3BS0+0w+ynn81KRSs4h6sS355/wAcOE0Y4Nqa815xeXE3jjUkkHU44KOvBKrpSla6cOXm5OX52yvBpjTLvHXWiZ+0ceOY49bdytPVOusEHVOusFpyXXq51NN9KdYqve7iclYqoLv7Yn9uSKiIMmeh3RUZtNeS6tIWy+1bBs+JFfff6oQ3f2YO7yK81zq1ZF8tMTMlMCsSBEfCeTqWmlV6HYm0DDM3IxTUlhfBB1IwcO6hHBRYnD3OztqxLMth74biLztNa7VT0svlYzpCblWhjosA+sa3IEOH3XjvcYc2HjbqsbtfNGNDgMPwsA73fopjtGpxDU+KsKrENXclaVQVKohQVBSqoEQXgq6qjBVwQXV6z8VcraVVQKIKqoVArgFRVUKuAVSEFiqr7tVIyA9/uNJpnTRBAgCy/wAMci5ra6Vr9E9Sxnv3yBvDa9cEGMG1UrIZPDVdD7Bdg5btVJR5n1kSXgwniGYhbW86lTTQ02711OwOwHZ2xLr4Mn+IjtOEaZN88QMhyCDgst2VtyagMjy9kT0SE8Va9su6hG5F9RU3BEHGfTD2fMnarLagsd+GnaMmKfBFAo07rwHe0nVctmb8vHEaAbrw4Oa/YftpzX1R2jsiBbtjTVmTODJiGWhwzY7NrhvBAPJfM1qyExJTcxZ9oMDJuXeWRWjbtG44EblBcy15eZaIziIb83t1B1ovNtOZ/GUiCoafdrsCxHwntiXW6mivj/KMmiiDDiGrqq1XuGKpRBaivolEFoCUV1FcANUFgCuAUjYL9ASNxV7YTa+1EaN1cfBBEArgFsFmdkbatOjpKyZ+Ow+64QbjP97sFttm+iDtBMEGaMlJs1EWL6x7eTRTxQc1Y2uhPDNTCXdheo3ZfK7jZnods6FdNp2pNTBGbYDRBafqfFbVZnYTsxZoH4ex4DnD449Yp/5VQfOMlZU1PPuSUtMzMUfDLwHP+i2mzfRl2lnaH/4z1DDSj5uKGD/aPaHcvoeDChwWCHCY1jBk1ooByUiDkNm+hyICDaNqwodM2SsAHuc77LZ7P9F3ZmVLXzMvHnnj4pmMSBybQLd0QeVJ2BY8hDMOTsuTgtcC1wZAaLw37VpXaP0Q2PaMcR7IjOst5dV8NrL8I7aNqKcjTculIg8rszYsDs9YstZcq4uhwG4vLQC9xNXOw2kleqiICIiChWh+kjsIO0kMT9mObDtWEy7R1Lsw35SdDsO88RvqIPlaesS05GK+HaNnTEtEbgXRIZAH92R7140wWCrWRWOPxEO1X2A9oe2jgCNQRgVCZSWcAHS8IgaXAUHx6IdRmDwKCHRfXr7Ks559uQlDxgtPkjbKs1hq2z5QcIDfsg+Qwwlwa3EnIVxPLVSPlHwjdiNc0jRwovr+HBgwQfVQmM/paAtU7ddhLP7VQDGDRLWm0UhzLR71MmvpmPp9Q+ebCsaYty1IFmyYLpiMTcaMMgScdMBmuiWb6GLVjAGftCUk21yhtdHcRzugclsPot9HlpdmbamLUtl0qXGAYUBsGIXEEuBcTUADACnErqLdiDnll+iDs1KFrpx05aDx/wDvEut7mgfVbfZnZ+x7KANm2XKS7h8UOEA7/dmvVRBQZKqIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiD/9k=" alt="Mi Portable Bluetooth Speaker">
+                <h3>Mi Portable Bluetooth Speaker (16W)</h3>
+                <span class="discount">28% off</span>
+                <p class="price">₹2,499 <span class="original-price">₹3,499</span></p>
+            </div>
+        </section>
+
+        <section class="banner">
+            <h2>Save Up to 65% On Chargers & Cables</h2>
+            <p>Free Delivery on All Products</p>
+            <a href="#" class="cta-button">Buy Now</a>
+        </section>
+
+        <section class="product-grid">
+            <div class="product-card">
+                <img src="data:image/jpeg;base64,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" alt="Xiaomi 120W HyperCharge Adapter">
+                <h3>Xiaomi 120W HyperCharge Adapter</h3>
+                <span class="discount">50% off</span>
+                <p class="price">₹2,999 <span class="original-price">₹5,999</span></p>
+            </div>
+            <div class="product-card">
+                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRp3Dzda2sgUSLrx6T75zeCDFruz9k9brjgwL5qU_AvR0VhVNDzcnJlCtHGCKjKHzNleMsJ4OK-l_LByyp2jT-kd3Zk7hyiCpas8gGcg11ahmOjZbYLx6J7Kg alt="Mi 2A Fast Charger">
+                <h3>Mi 2A Fast Charger with Cable</h3>
+                <span class="discount">25% off</span>
+                <p class="price">₹449 <span class="original-price">₹599</span></p>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/21Z1HsPvyTL._SX300_SY300_QL70_FMwebp_.jpg" alt="Xiaomi SonicCharge Cable">
+                <h3>Xiaomi SonicCharge 2.0 Cable</h3>
+                <span class="discount">64% off</span>
+                <p class="price">₹249 <span class="original-price">₹699</span></p>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/21eXW5gyfmL._SX300_SY300_QL70_FMwebp_.jpg" alt="Mi 18W Dual Port Charger">
+                <h3>Mi 18W Dual Port Charger + USB Cable</h3>
+                <span class="discount">35% off</span>
+                <p class="price">₹899 <span class="original-price">₹1,397</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
